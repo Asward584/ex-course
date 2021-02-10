@@ -1,0 +1,22 @@
+{
+    "parser": "babel-eslint",
+    "env":{
+        "es6":true,
+        "browser":true,
+        "node":true
+
+    },
+    "rules":{
+        "rules": {
+            "semi": [0, "always"],
+            "quotes": [0, "double"],
+            "linebreak-style": [0, "windows"]
+        }
+    },
+    "extends": ["airbnb-base","eslint:recommended", "google"],
+    "parserOptions": {
+        "ecmaVersion": 2017
+    }
+
+}
+
