@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development webpack serve --hot --open ",
-    "build": "cross-env NODE_ENV=production webpack --mode production"
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "fix-js": "eslint-auto-fix"
   },
   "repository": {
     "type": "git",
@@ -35,9 +36,6 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.2",
     "css-minimizer-webpack-plugin": "^1.2.0",
-    "eslint": "^7.19.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-loader": "^4.0.2",
     "html-webpack-plugin": "^5.0.0",
     "mini-css-extract-plugin": "^1.3.6",
     "sass": "^1.32.7",

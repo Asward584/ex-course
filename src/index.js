@@ -1,11 +1,14 @@
+import './scss/index.scss';
 
+// const el = document.createElement('div')
+// el.innerHTML = `<h1>Text</h2>`
+// document.body.appendChild(el)
+import { Excel } from '@/components/excel/Excel';
+import { Header} from '@/components/header/Header';
+import { Toolbar} from '@/components/toolbar/Toolbar';
+import { Formula} from '@/components/formula/Formula';
+import { Table } from '@/components/table/Table';
 
-import { Excel } from '@/components/excel/Excel'
-import { Header} from '@/components/header/Header'
-import { Toolbar} from '@/components/toolbar/Toolbar'
-import { Formula} from '@/components/formula/Formula'
-import { Table } from '@/components/table/Table'
-import './scss/index.scss'
 
 const excel = new Excel('#app', {
     components:[Header,Toolbar,Formula,Table]
