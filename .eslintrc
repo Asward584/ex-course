@@ -15,6 +15,7 @@
     },
     "extends": ["airbnb-base","eslint:recommended", "google"],
     "parserOptions": {
+        "ecmaVersion": 2017,
         "ecmaVersion": 2017
     }
 
