@@ -1,7 +1,7 @@
 import {ExcelComponent} from '@core/ExcelComponent' 
 
 export class Header extends ExcelComponent{
-    static className = 'excel_header'
+    static className = 'excel__header'
     
     toHTML(){
         return `
@@ -19,6 +19,7 @@ export class Header extends ExcelComponent{
   
         </div>
         `
+        // return `<h1>Header</h1>`
     }
 
 }
