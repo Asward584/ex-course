@@ -30,6 +30,18 @@ class Dom {
     }
     return this;
   }
+
+  on(eventType, callback) {
+
+    this.$el.addEventListener(eventType, callback);
+  }
+
+  off(eventType, callback) {
+
+    this.$el.(eventType, callback);
+  }
+
+
 }
 
 export function $(selector) {
