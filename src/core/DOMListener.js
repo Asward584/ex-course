@@ -22,8 +22,9 @@ export class DOMListener {
           `Method ${method} is not implemented in ${name} Component`
         );
       }
-      this.root.on(listener, this[method].bind(this));
-      console.log(this[method].bind(this));
+      this[method] = this[method].bind(this)
+      this.root.on(listener, this[method]);
+      //console.log(this[method].bind(this));
     });
   }
 
@@ -31,7 +32,8 @@ export class DOMListener {
 
     this.listeners.forEach((listener) => {
         const method = returnEventName(listener);
-        this.root.off(listener, this[method].bind(this));
+        console.log('Meth',method)
+        this.root.off(listener, this[method]);
       
   })}
 
