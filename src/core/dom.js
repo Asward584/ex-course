@@ -40,10 +40,26 @@ class Dom {
 
     this.$el.removeEventListener(eventType, callback);
   }
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
 
+  getCoords(){
+    return this.$el.getBoundingClientRect()
+  }
+  get data(){
+    return this.$el.dataset
 
+  }
+  findAll (select){
+    return this.$el.querySelectorAll(select)
+  }
+  css(styles ={}){
+    Object.keys(styles)
+    .forEach(key =>{
+    this.$el.style[key]= styles[key] })
 }
-
+}
 export function $(selector) {
   return new Dom(selector);
 }
