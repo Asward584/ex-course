@@ -25,21 +25,20 @@ export function resizeHandler($root, event) {
     }
 
     document.onmouseup = (e) => {
-      console.log(this);
       document.onmousemove = null;
       document.onmouseup = null;
-      //$parent.css({ width: value + 'px' });
       if (type === 'col') {
         $parent.css({ width: value + 'px' });
-        $root.findAll(`[data-column="${$parent.data.col}"]`).forEach((el) => (el.style.width = value + 'px'));
+        $root.findAll(`[data-column="${$parent.data.col}"]`)
+        .forEach((el) => (el.style.width = value + 'px'));
       } else {
         $parent.css({ height: value + 'px' });
       }
 
       $resizer.css({
         opacity: 0,
-        bottom: '0px',
-        right: '0px'
+        bottom: '0',
+        right: '0'
       });
     };
   };

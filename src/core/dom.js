@@ -40,6 +40,13 @@ class Dom {
 
     this.$el.removeEventListener(eventType, callback);
   }
+  addClass (className){
+    this.$el.classList.add(className)
+  }
+  
+  removeClass (className){
+    this.$el.classList.remove(className)
+  }
   closest(selector) {
     return $(this.$el.closest(selector))
   }
@@ -54,10 +61,24 @@ class Dom {
   findAll (select){
     return this.$el.querySelectorAll(select)
   }
+
+  find(selector){
+    return $(this.$el.querySelector(selector))
+  }
   css(styles ={}){
     Object.keys(styles)
     .forEach(key =>{
     this.$el.style[key]= styles[key] })
+}
+id(parse){
+  if (parse){
+    const parsed = this.id().split(':')
+    return {
+      row:+parsed[0],
+      col:+parsed[1]
+    }
+  }
+  return this.data.id
 }
 }
 export function $(selector) {
