@@ -1,8 +1,7 @@
 import {$} from '@core/dom'
 
 export function resizeHandler($root, event) {
-{
-  const $resizer = $(event.target);
+{ return new Promise(resolve =>{ const $resizer = $(event.target);
   const $parent = $resizer.closest('[data-type ="resizable"]');
   const coords = $parent.getCoords();
   //const cells = this.root.findAll(`[data-column="${$parent.data.col}"]`);
@@ -33,14 +32,20 @@ export function resizeHandler($root, event) {
         .forEach((el) => (el.style.width = value + 'px'));
       } else {
         $parent.css({ height: value + 'px' });
+        console.log($parent)
       }
-
+      resolve({
+        value:value,
+        type,
+        id:$parent.data[type]
+      })
       $resizer.css({
         opacity: 0,
         bottom: '0',
         right: '0'
       });
     };
-  };
+  };})
+ 
 }
 }

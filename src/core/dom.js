@@ -95,6 +95,12 @@ class Dom {
     }
     return this.data.id;
   }
+  getStyles(style=[]){
+   return style.reduce((res,st)=>{
+      res[st]= this.$el.style[st]
+      return res
+    },{})
+  }
 }
 export function $(selector) {
   return new Dom(selector);

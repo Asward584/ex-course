@@ -7,6 +7,7 @@ constructor($root, options){
   super($root,{
    name: 'Formula',
    listeners: ['input', 'keydown'],
+   subscribe : ['currentText'],
    ...options
 
   })
@@ -20,13 +21,13 @@ init() {
     this.$formula.text($cel.text())
     
   })
-  this.$on('table:input', ($cell)=>{
-    //console.log($cell.text())
-    this.$formula.text($cell.text())
 
-  })
 }
 
+  storeChanged({currentText}){
+    console.log('Changes',currentText)
+    this.$formula.text(currentText)
+  }
     toHTML(){
         return `
         <div class="info">fx</div>
