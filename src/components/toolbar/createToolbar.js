@@ -11,7 +11,7 @@ function toButton(button) {
 }
 
 export function createToolbar(state) {
-  console.log('render');
+  ///console.log('render');
   let flag = false;
   const buttons = [
     {

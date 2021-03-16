@@ -18,7 +18,7 @@ export class Toolbar extends ExcelStateComponent{
       this.initState(defaultStyle)
     }
     storeChanged(changes){
-    console.log('changes',changes)
+  //  console.log('changes',changes)
     this.setState(changes.currentStyle)
     }
     get template(){return createToolbar(this.state)}

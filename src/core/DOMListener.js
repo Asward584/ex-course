@@ -32,7 +32,7 @@ export class DOMListener {
 
     this.listeners.forEach((listener) => {
         const method = returnEventName(listener);
-        console.log('Meth',method)
+      //  console.log('Meth',method)
         this.root.off(listener, this[method]);
       
   })}

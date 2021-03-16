@@ -32,3 +32,8 @@ export function title_change(data){
         data
     }
 }
+export function update_date(){
+    return {
+        type: type.UPDATE_DATE
+    }
+}

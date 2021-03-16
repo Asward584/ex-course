@@ -3,3 +3,4 @@ export const CHANGE_TEXT = 'Change_Text';
 export const APPLY_STYLE = 'Apply_style'; 
 export const CHANGE_STYLE = 'Change_style'; 
 export const TITLE_CHANGE = 'Title_change'; 
+export const UPDATE_DATE = 'Update_date'; 
