@@ -1,5 +1,5 @@
 import { toInlineStyles } from '../core/utilits';
-import { CHANGE_TEXT, TABLE_RESIZE, APPLY_STYLE,CHANGE_STYLE, TITLE_CHANGE } from './types';
+import { CHANGE_TEXT, TABLE_RESIZE,UPDATE_DATE, APPLY_STYLE,CHANGE_STYLE, TITLE_CHANGE } from './types';
 export function rootReduser(state, action) {
   let field 
   let prevState
@@ -34,6 +34,10 @@ export function rootReduser(state, action) {
       return {...state, currentStyle: action.data};
       case TITLE_CHANGE :
         return {...state, tittle:action.data}
+      case UPDATE_DATE:
+  
+        return {...state, openDate: new Date().toJSON()}
+      
       
     default: 
       return state;

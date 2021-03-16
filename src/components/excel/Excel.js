@@ -1,9 +1,9 @@
 import { $ } from '../../core/dom';
 import { Observer } from '../../core/Observer';
 import { storeSubscriber } from '../../core/storeSubscriber';
+import { update_date } from '../../redux/actions';
 export class Excel {
-  constructor(selector, options) {
-    this.$el = $(selector);
+  constructor(options) {
     this.components = options.components || [];
     this.observer = new Observer();
     this.store = options.store || {}
@@ -32,9 +32,8 @@ export class Excel {
     return $root;
     
 }
-  render() {
-    this.$el.append(this.getRoot());
-    //console.log(this.components)
+  init() {
+    this.store.dispatch(update_date())
     this.subscriber.subscribeComponents(this.components)
     this.components.forEach((Component) =>Component.init())
 
